@@ -21,7 +21,7 @@ const PlaceList  = props => {
 const styles = StyleSheet.create({
    listContainer: {
       width: "100%",
-      color: "#000"  
+      color: "#000000",  
       }
 })
 export default PlaceList;

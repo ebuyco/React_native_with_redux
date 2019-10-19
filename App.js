@@ -12,6 +12,10 @@ export default class App extends Component {
     selectedPlace: null
   };
 
+  componentDidMount = () => {
+    
+  }
+
   placeAddedHandler = placeName => {
      this.setState(prevState => {
       return{

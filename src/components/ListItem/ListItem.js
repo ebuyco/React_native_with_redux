@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
         padding: 10,
         backgroundColor: "#eee",
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        color: "#000000",
     },
     placeImage: {
         marginRight: 8,
@@ -35,7 +36,10 @@ const styles = StyleSheet.create({
     },
     placeText: {
        fontWeight: "bold",
-       color: "#000"     
+        marginVertical: 10,
+        backgroundColor: '#ccc',
+        borderColor: 'black',
+        color: "#000000",   
     }
 });
 
