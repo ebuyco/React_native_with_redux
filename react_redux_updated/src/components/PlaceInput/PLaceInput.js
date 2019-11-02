@@ -1,42 +1,31 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import {View, TextInput, Button} from 'react-native';
 import EStylesheet from 'react-native-extended-stylesheet';
 
-class PlaceInput extends Component {
-  state = {
-    placeName: '',
+const PlaceInput = props => {
+  const [enterInput, setInput] = useState('');
+
+  const inputHandler = enteredText => {
+    setInput(enteredText);
   };
 
-  placeNameChangedHandler = val => {
-    this.setState({
-      placeName: val,
-    });
+  const submitHandler = () => {
+    props.onPlacedAdded(enterInput);
+    setInput('');
   };
 
-  placeSubmitHandler = () => {
-    if (this.state.placeName.trim() === '') {
-      return;
-    }
-    this.props.onPlacedAdded(this.state.placeName);
-  };
-  render() {
-    return (
-      <View style={styles.inputContainer}>
-        <TextInput
-          placeholder="An awesome place"
-          value={this.state.placeName}
-          onChangeText={this.placeNameChangedHandler}
-          style={styles.placeInput}
-        />
-        <Button
-          title="Add"
-          style={styles.placeButton}
-          onPress={this.placeSubmitHandler}
-        />
-      </View>
-    );
-  }
-}
+  return (
+    <View style={styles.inputContainer}>
+      <TextInput
+        placeholder="An awesome place"
+        value={enterInput}
+        onChangeText={inputHandler}
+        style={styles.placeInput}
+      />
+      <Button title="Add" style={styles.placeButton} onPress={submitHandler} />
+    </View>
+  );
+};
 
 const styles = EStylesheet.create({
   inputContainer: {
