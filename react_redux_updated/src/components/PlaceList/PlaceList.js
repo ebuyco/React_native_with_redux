@@ -1,14 +1,14 @@
-import React from 'react';
-import {FlatList} from 'react-native';
-import ListItem from '../ListItem/ListItem';
-import EStylesheet from 'react-native-extended-stylesheet';;
+import React from "react";
+import { StyleSheet, FlatList } from "react-native";
 
-const PlaceList = props => {
+import ListItem from "../ListItem/ListItem";
+
+const placeList = props => {
   return (
     <FlatList
       style={styles.listContainer}
       data={props.places}
-      renderItem={info => (
+      renderItem={(info) => (
         <ListItem
           placeName={info.item.name}
           placeImage={info.item.image}
@@ -19,10 +19,10 @@ const PlaceList = props => {
   );
 };
 
-const styles = EStylesheet.create({
+const styles = StyleSheet.create({
   listContainer: {
-    width: '100%',
-    color: '#000000',
-  },
+    width: "100%"
+  }
 });
-export default PlaceList;
+
+export default placeList;

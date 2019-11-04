@@ -1,26 +1,27 @@
-import React, { Component } from "react";
-import { View } from "react-native";
-
-import PlaceInput from "./components/PlaceInput/PlaceInput";
-import PlaceList from "./components/PlaceList/PlaceList";
-import PlaceDetail from "./components/PlaceDetail/PlaceDetail";
-import placeImage from './assets/data-image.jpg';
+import React, {Component} from 'react';
+import {View} from 'react-native';
 import EStylesheet from 'react-native-extended-stylesheet';
+import PlaceInput from './components/PlaceInput/PlaceInput';
+import PlaceList from './components/PlaceList/PlaceList';
+import PlaceDetail from './components/PlaceDetail/PlaceDetail';
+import placeImage from './assets/data-image.jpg';
 
 export default class App extends Component {
   state = {
     places: [],
-    selectedPlace: null
+    selectedPlace: null,
   };
+
+  componentDidMount = () => {};
 
   placeAddedHandler = placeName => {
     this.setState(prevState => {
       return {
         places: prevState.places.concat({
           key: Math.random(),
-          name: placeName,
-          image: placeImage
-        })
+          value: placeName,
+          image: placeImage,
+        }),
       };
     });
   };
@@ -31,14 +32,14 @@ export default class App extends Component {
         places: prevState.places.filter(place => {
           return place.key !== prevState.selectedPlace.key;
         }),
-        selectedPlace: null
+        selectedPlace: null,
       };
     });
   };
 
   modalClosedHandler = () => {
     this.setState({
-      selectedPlace: null
+      selectedPlace: null,
     });
   };
 
@@ -47,7 +48,7 @@ export default class App extends Component {
       return {
         selectedPlace: prevState.places.find(place => {
           return place.key === key;
-        })
+        }),
       };
     });
   };
@@ -56,11 +57,11 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <PlaceDetail
-          selectedPlace={this.state.selectedPlace}
           onItemDeleted={this.placeDeletedHandler}
+          selectedPlace={this.state.selectedPlace}
           onModalClosed={this.modalClosedHandler}
         />
-        <PlaceInput onPlaceAdded={this.placeAddedHandler} />
+        <PlaceInput onPlacedAdded={this.placeAddedHandler} />
         <PlaceList
           places={this.state.places}
           onItemSelected={this.placeSelectedHandler}
@@ -72,10 +73,6 @@ export default class App extends Component {
 
 const styles = EStylesheet.create({
   container: {
-    flex: 1,
-    padding: 26,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "flex-start"
-  }
+    padding: 50,
+  },
 });

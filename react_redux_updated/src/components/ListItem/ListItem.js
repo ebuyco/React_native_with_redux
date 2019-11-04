@@ -10,7 +10,7 @@ const listItem = props => (
         source={props.placeImage}
         style={styles.placeImage}
       />
-      <Text style={styles.placeText}>{props.placeName}</Text>
+      <Text>{props.placeName}</Text>
     </View>
   </TouchableOpacity>
 );
@@ -23,20 +23,13 @@ const styles = EStylesheet.create({
     backgroundColor: '#eee',
     flexDirection: 'row',
     alignItems: 'center',
-    color: '#000000',
   },
   placeImage: {
     marginRight: 8,
     height: 30,
     width: 30,
   },
-  placeText: {
-    fontWeight: 'bold',
-    marginVertical: 10,
-    backgroundColor: '#ccc',
-    borderColor: 'black',
-    color: '#000000',
-  },
+
 });
 
 export default listItem;

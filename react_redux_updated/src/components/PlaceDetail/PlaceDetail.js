@@ -32,6 +32,7 @@ const placeDetail = props => {
 const styles = EStylesheet.create({
   modalContainer: {
     margin: 22,
+    fontFamily: 'open-sans',
   },
   placeImage: {
     width: '100%',
@@ -41,7 +42,6 @@ const styles = EStylesheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     fontSize: 28,
-    color: '#000000',
   },
 });
 

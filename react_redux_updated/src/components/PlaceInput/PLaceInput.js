@@ -10,7 +10,7 @@ const PlaceInput = props => {
   };
 
   const submitHandler = () => {
-    props.onPlacedAdded(enterInput);
+    props.onPlaceAdded(enterInput);
     setInput('');
   };
 
@@ -29,7 +29,6 @@ const PlaceInput = props => {
 
 const styles = EStylesheet.create({
   inputContainer: {
-    // flex: 1,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
