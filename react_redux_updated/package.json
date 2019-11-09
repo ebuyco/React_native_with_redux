@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "pre-start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
     "react": "16.9.0",

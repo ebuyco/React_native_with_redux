@@ -1,14 +1,14 @@
-import React from "react";
-import { StyleSheet, FlatList } from "react-native";
+import React from 'react';
+import {StyleSheet, FlatList} from 'react-native';
 
-import ListItem from "../ListItem/ListItem";
+import ListItem from '../ListItem/ListItem';
 
 const placeList = props => {
   return (
     <FlatList
       style={styles.listContainer}
       data={props.places}
-      renderItem={(info) => (
+      renderItem={info => (
         <ListItem
           placeName={info.item.name}
           placeImage={info.item.image}
@@ -21,8 +21,8 @@ const placeList = props => {
 
 const styles = StyleSheet.create({
   listContainer: {
-    width: "100%"
-  }
+    width: '100%',
+  },
 });
 
 export default placeList;

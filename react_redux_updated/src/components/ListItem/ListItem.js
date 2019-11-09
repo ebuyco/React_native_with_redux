@@ -29,7 +29,6 @@ const styles = EStylesheet.create({
     height: 30,
     width: 30,
   },
-
 });
 
 export default listItem;
