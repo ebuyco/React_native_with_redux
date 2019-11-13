@@ -3,17 +3,30 @@
 // import EStylesheet from 'react-native-extended-stylesheet';
 
 // const PlaceInput = props => {
+//   // const [enterInput, setInput] = useState('');
+
+//   // const inputHandler = enteredText => {
+//   //   setInput(enteredText);
+//   // };
+
+//   // const submitHandler = () => {
+//   //   props.onPlaceAdded(enterInput);
+//   //   setInput('');
+//   // };
+
 //   const [enterInput, setInput] = useState('');
 
-//   const inputHandler = enteredText => {
-//     setInput(enteredText);
+//   const inputHandler = val => {
+//     setInput(val);
 //   };
 
 //   const submitHandler = () => {
+//     if (enterInput.trim() === '') {
+//       return;
+//     }
 //     props.onPlaceAdded(enterInput);
 //     setInput('');
 //   };
-
 //   return (
 //     <View style={styles.inputContainer}>
 //       <TextInput
@@ -33,17 +46,20 @@
 //     flexDirection: 'row',
 //     justifyContent: 'space-between',
 //     alignItems: 'center',
+//     marginBottom: '1rem',
 //   },
 //   placeInput: {
-//     width: '70%',
+//     width: '80%',
+//     borderColor: 'black',
+//     borderWidth: 1,
+//     padding: '1rem',
 //   },
 //   placeButton: {
-//     width: '30%',
+//     width: '40%',
 //   },
 // });
 
 // export default PlaceInput;
-
 import React, {Component} from 'react';
 import {View, TextInput, Button, StyleSheet} from 'react-native';
 
